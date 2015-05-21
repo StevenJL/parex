@@ -53,3 +53,5 @@ time #=> 5532994
 ```
 Obviously, parallel is faster, as it's just the time of the slowest process (most likely the fibonacci computation in this case), rather than the sum of all process times.
 
+See the [tests for more examples](https://github.com/StevenJL/parex/blob/master/test/parex_test.exs).
+
