@@ -9,4 +9,28 @@ defmodule ParexTest do
     assert Keyword.get(results, :add) == 2
     assert Keyword.get(results, :greet) == "Hi!"
   end
+
+  test "it should run functions in parallel" do
+    {time, _} = :timer.tc(
+      fn -> 
+        Parex.parallel_execute([
+          hang1: fn() -> :timer.sleep(1000) end,
+          hang2: fn() -> :timer.sleep(1000) end,
+          hang3: fn() -> :timer.sleep(1000) end,
+          hang4: fn() -> :timer.sleep(1000) end
+        ]) 
+      end
+    )
+    microseconds_per_milliseconds = 1000
+    # :timer.tc returns microseconds 
+    # :timer.sleep takes milliseconds
+
+    epsilon = 5
+    # It's not perfectly parallel, there is a minor overhead
+
+    assert time < (1000 + epsilon)*microseconds_per_milliseconds
+  end
 end
+
+
+
