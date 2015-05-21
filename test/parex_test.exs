@@ -14,10 +14,10 @@ defmodule ParexTest do
     {time, _} = :timer.tc(
       fn -> 
         Parex.parallel_execute([
-          hang1: fn() -> :timer.sleep(1000) end,
-          hang2: fn() -> :timer.sleep(1000) end,
-          hang3: fn() -> :timer.sleep(1000) end,
-          hang4: fn() -> :timer.sleep(1000) end
+          hang1: fn() -> :timer.sleep(5000) end,
+          hang2: fn() -> :timer.sleep(4000) end,
+          hang3: fn() -> :timer.sleep(3000) end,
+          hang4: fn() -> :timer.sleep(2000) end
         ]) 
       end
     )
@@ -28,7 +28,7 @@ defmodule ParexTest do
     epsilon = 5
     # It's not perfectly parallel, there is a minor overhead
 
-    assert time < (1000 + epsilon)*microseconds_per_milliseconds
+    assert time < (5000 + epsilon)*microseconds_per_milliseconds
   end
 end
 
