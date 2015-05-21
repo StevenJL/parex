@@ -3,6 +3,17 @@ Parex
 
 **Par**allel **Ex**ecute (Parex) is an Elixir module for executing multiple (slow) processes in parallel.
 
+### Installation
+Put this in your `mix.exs` `deps`
+
+```
+defp deps do
+[
+  ... # other dependencies
+  {:parex, github: "stevenjl/parex"}
+]
+```
+
 ### Usage
 `Parex.parllel_execute/1` takes a keyword list of functions and executes them in parallel.
 
