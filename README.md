@@ -51,5 +51,5 @@ Now let's run them in parallel.
 )
 time #=> 5532994
 ```
-Obviously, parallel is faster, as it's just the time of the slowest process (probably the fibonacci computation), rather than the sum of all process times.
+Obviously, parallel is faster, as it's just the time of the slowest process (most likely the fibonacci computation in this case), rather than the sum of all process times.
 
