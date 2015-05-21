@@ -6,7 +6,7 @@ Parex
 ### Installation
 Put this in your `mix.exs` `deps`
 
-```
+```elixir
 defp deps do
 [
   ... # other dependencies
