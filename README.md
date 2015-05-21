@@ -12,7 +12,7 @@ Parex.parallel_execute([
          hang: fn() -> :timer.sleep(5000) end,
   web_request: fn() -> HTTPotion.get("http://wwww.reddit.com") end
 ])
-# => [web_request: %HTTPotion.Response{body...}, time_out: :ok, fibonacci: 102334155]
+# => [web_request: %HTTPotion.Response{body...}, hang: :ok, fibonacci: 102334155]
 ```
 
 ### Compared to executing in series:
