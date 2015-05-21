@@ -3,7 +3,7 @@ require IEx
 defmodule Parex do
   def parallel_execute(processes) do
     processes |> Enum.each fn process ->
-      spawn(Parex.Process, :init, [self, process])
+      spawn_link(Parex.Process, :init, [self, process])
     end
 
     gather_results([], length processes)
