@@ -53,7 +53,7 @@ Now let's run them in parallel.
            fib_num: fn() -> Math.fib(40) end,
           fib_num2: fn() -> Math.fib(35) end,
              hang1: fn() -> :timer.sleep(1000) end,
-             hang2: fn() -> :timer.sleep(1000) end,
+             hang2: fn() -> :timer.sleep(5000) end,
       web_request1: fn() -> HTTPotion.get("http://www.reddit.com") end,
       web_request2: fn() -> HTTPotion.get("http://bleacherreport.com") end,
       web_request3: fn() -> HTTPotion.get("http://www.elixir-lang.org") end
