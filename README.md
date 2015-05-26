@@ -15,7 +15,7 @@ defp deps do
 ```
 
 ### Usage
-`Parex.parllel_execute/1` takes a keyword list of functions and executes them in parallel.
+`Parex.parallel_execute/1` takes a keyword list of functions and executes them in parallel.
 
 ```elixir
 Parex.parallel_execute([
