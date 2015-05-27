@@ -28,7 +28,7 @@ Parex.parallel_execute([
 
 It also works with a list of maps
 
-```
+```elixir
 Parex.parallel_execute([
     %{ fibonacci: fn() -> Math.fib(40) end},
     %{ hang: fn() -> :timer.sleep(5000) end},
