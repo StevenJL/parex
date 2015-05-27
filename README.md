@@ -10,7 +10,7 @@ Put this in your `mix.exs` `deps`
 defp deps do
 [
   ... # other dependencies
-  {:parex, github: "stevenjl/parex"}
+  {:parex, github: "stevenjl/parex", tag: "v0.0.1"}
 ]
 ```
 
