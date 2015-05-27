@@ -30,7 +30,19 @@ defmodule ParexTest do
 
     assert time < (5000 + epsilon)*microseconds_per_milliseconds
   end
+
+  test "it also works for a list of maps" do
+    results = Parex.parallel_execute([
+      %{"add" => fn() -> :timer.sleep(1000); 1+1 end},
+      %{"greet" => fn() -> :timer.sleep(4000); "Hi!" end}
+    ])
+
+    assert results == [%{"greet" => "Hi!"}, %{"add" => 2}]
+  end
 end
 
-
+    results = Parex.parallel_execute([
+      %{add: fn() -> :timer.sleep(1000); 1+1 end},
+      %{greet: fn() -> :timer.sleep(4000); "Hi!" end}
+    ])
 
