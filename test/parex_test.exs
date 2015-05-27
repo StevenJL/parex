@@ -39,5 +39,15 @@ defmodule ParexTest do
 
     assert results == [%{"greet" => "Hi!"}, %{"add" => 2}]
   end
+
+  test "it also works for a single map where the functions are key-values" do
+    results = Parex.parallel_execute(
+      %{ add: fn() -> 1+1 end,
+         greet: fn() -> "Hi!" end
+       }
+    )
+
+    assert results == %{add: 2, greet: "Hi!"}
+  end
 end
 

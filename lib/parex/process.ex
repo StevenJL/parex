@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Parex.Process do
   def init(sender, process) do
     result = execute(process)

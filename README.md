@@ -37,6 +37,19 @@ Parex.parallel_execute([
 # => [%{web_request: %HTTPotion.Response{body...}}, %{hang: :ok}, %{fibonacci: 102334155}]
 ```
 
+It also works with a single map whose key-value pairs are functions
+
+```elixir
+Parex.parallel_execute(
+    %{ 
+       fibonacci: fn() -> Math.fib(40) end,
+       hang: fn() -> :timer.sleep(5000) end,
+       web_request: fn() -> HTTPotion.get("http://wwww.reddit.com") end
+     }
+)
+# => %{ web_request: %HTTPotion.Response{body...}, hang: :ok, fibonacci: 102334155 }
+```
+
 ### Compared to executing in series:
 Let's run a few slow functions in series.
 
