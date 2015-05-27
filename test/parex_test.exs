@@ -41,8 +41,3 @@ defmodule ParexTest do
   end
 end
 
-    results = Parex.parallel_execute([
-      %{add: fn() -> :timer.sleep(1000); 1+1 end},
-      %{greet: fn() -> :timer.sleep(4000); "Hi!" end}
-    ])
-
