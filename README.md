@@ -1,5 +1,6 @@
 Parex
 =====
+[![Build Status](https://travis-ci.org/StevenJL/parex.svg)](https://travis-ci.org/StevenJL/parex)
 
 **Par**allel **Ex**ecute (Parex) is an Elixir module for executing multiple (slow) processes in parallel.
 
