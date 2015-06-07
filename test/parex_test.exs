@@ -25,7 +25,7 @@ defmodule ParexTest do
     # :timer.tc returns microseconds 
     # :timer.sleep takes milliseconds
 
-    epsilon = 5
+    epsilon = 50
     # It's not perfectly parallel, there is a minor overhead
 
     assert time < (5000 + epsilon)*microseconds_per_milliseconds
